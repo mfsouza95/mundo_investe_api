@@ -62,7 +62,7 @@ source venv/bin/activate
 ### 3. Instale as dependências
 
 ```bash
-pip install fastapi uvicorn sqlalchemy pytest httpx pydantic[email]
+pip install -r requirements.txt
 ```
 
 ### 4. Execute a aplicação
