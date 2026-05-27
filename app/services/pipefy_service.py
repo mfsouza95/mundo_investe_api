@@ -21,15 +21,14 @@ def montar_mutation_create_card(nome: str, email: str, patrimonio: float) -> str
     mutation {{
         createCard(input: {{
             pipe_id: "{pipe_id}"
-            title: "{nome}"
             fields_attributes: [
                 {{ field_id: "email", field_value: "{email}" }},
                 {{ field_id: "patrimonio", field_value: "{patrimonio}" }}
+                {{ field_id: "title", field_value: "{nome}" }}
             ]
         }}) {{
             card {{
                 id
-                title
             }}
         }}
     }}
