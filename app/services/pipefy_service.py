@@ -3,14 +3,19 @@ import os
 def montar_mutation_update_card(card_id: str, status: str, prioridade: str) -> str:
     return f"""
     mutation {{
-        updateCardField(input: {{
-            card_id: "{card_id}"
+        updateStatus: updateCardField(input: {{
+            card_id: {card_id}
             field_id: "status"
             new_value: "{status}"
         }}) {{
-            card {{
-                id
-            }}
+            success
+        }}
+        updatePrioridade: updateCardField(input: {{
+            card_id: {card_id}
+            field_id: "prioridade"
+            new_value: "{prioridade}"
+        }}) {{
+            success
         }}
     }}
     """
