@@ -21,11 +21,11 @@ def montar_mutation_update_card(card_id: str, status: str, prioridade: str) -> s
     """
 
 def montar_mutation_create_card(nome: str, email: str, patrimonio: float) -> str:
-    pipe_id = os.getenv("PIPEFY_PIPE_ID", "SEU_PIPE_ID")
+    pipe_id = os.getenv("PIPEFY_PIPE_ID", "000000")
     return f"""
     mutation {{
         createCard(input: {{
-            pipe_id: "{pipe_id}"
+            pipe_id: {pipe_id}
             fields_attributes: [
                 {{ field_id: "email", field_value: "{email}" }},
                 {{ field_id: "patrimonio", field_value: "{patrimonio}" }}

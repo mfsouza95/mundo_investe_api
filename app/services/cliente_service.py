@@ -29,7 +29,7 @@ def processar_webhook( db: Session, dados: WebhookCardUpdated ):
     cliente = buscar_cliente_por_email(db, dados.cliente_email)
     if not cliente:
         raise HTTPException(status_code = 404, detail = "Email não encontrado!")
-    if cliente.valor_patrimonio >= 200000:
+    if cliente.valor_patrimonio >= 200000: # type: ignore
         prioridade = "prioridade_alta"
     else:
         prioridade = "prioridade_normal"
